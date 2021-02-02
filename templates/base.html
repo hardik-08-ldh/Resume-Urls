@@ -21,21 +21,61 @@
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">Name</th>
+            <th scope="col">Project Name</th>
             <th scope="col">Urls</th>
           </tr>
         </thead>
         <tbody>
           {% for obj in object_list %}
+            {% if obj.rank == '1' %}
             <tr>
               <td>{{obj.name}}</td>
               <td>
                 <button class="btn btn-outline-primary copy-btn" data-url="{{obj.url}}">click</button>
               </td>
             </tr>
+            {% endif %}
           {% endfor %}
-        </tbody>
-      </table>
+          </table>
+          <br><br>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Project Source Code </th>
+                <th scope="col">Urls</th>
+              </tr>
+            </thead>
+            {% for obj in object_list %}
+              {% if obj.rank == '2' %}
+              <tr>
+                <td>{{obj.name}}</td>
+                <td>
+                  <button class="btn btn-outline-primary copy-btn" data-url="{{obj.url}}">click</button>
+                </td>
+              </tr>
+              {% endif %}
+            {% endfor %}
+          </table>
+          <br><br>
+            <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Profile Name </th>
+                <th scope="col">Urls</th>
+              </tr>
+            </thead>
+            {% for obj in object_list %}
+              {% if obj.rank == '3' %}
+              <tr>
+                <td>{{obj.name}}</td>
+                <td>
+                  <button class="btn btn-outline-primary copy-btn" data-url="{{obj.url}}">click</button>
+                </td>
+              </tr>
+              {% endif %}
+            {% endfor %}
+          </tbody>
+          </table>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
